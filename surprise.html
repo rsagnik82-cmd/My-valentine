@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>💖 Valentine Surprise 💖</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #ff5f6d, #ffc371);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
+    }
+
+    .card {
+      background: white;
+      padding: 30px 40px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      animation: pop 1s ease;
+    }
+
+    h1 {
+      color: #ff4b5c;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 18px;
+      color: #333;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 30px;
+      background: #ff4b5c;
+      color: white;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+    }
+
+    .rose {
+      position: absolute;
+      font-size: 26px;
+      animation: float 6s linear infinite;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh);
+        opacity: 0;
+      }
+    }
+
+    @keyframes pop {
+      0% { transform: scale(0.5); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>💖 Happy Rose Day 💖</h1>
+    <p>
+      Never have i evevevrevrvevr 🌹<br>
+      loved someone else the way i love u 💙<br>
+      U are the special Rose❤️❤️<br>
+      My eyes wait for to see in a meadow full of other flowers..
+    </p>
+    <p><strong>Happy Rose Day</strong> 💘</p>
+    <button onclick="startSurprise()">Click for Surprise ✨</button>
+  </div>
+
+  <script>
+    function startSurprise() {
+      for (let i = 0; i < 40; i++) {
+        let rose = document.createElement("div");
+        rose.className = "rose";
+        rose.innerHTML = "🌹";
+        rose.style.left = Math.random() * 100 + "vw";
+        rose.style.animationDuration = (Math.random() * 3 + 3) + "s";
+        rose.style.fontSize = (Math.random() * 18 + 20) + "px";
+        document.body.appendChild(rose);
+
+        setTimeout(() => {
+          rose.remove();
+        }, 6000);
+      }
+    }
+  </script>
+
+</body>
+</html>
+          
